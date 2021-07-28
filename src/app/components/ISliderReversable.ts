@@ -1,4 +1,5 @@
 export interface ISliderReversable{
-    autoReversed: boolean;
+    setReversedIfUndefined(par: boolean): void
+    autoReversed: boolean
     reversed? :boolean
 }

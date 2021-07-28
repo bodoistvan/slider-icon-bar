@@ -17,7 +17,7 @@ export class SliderButtonContainerComponent implements OnInit, AfterContentInit 
 
   ngAfterContentInit(): void {
     if (this.reversed === true) {
-      this.sliderButtons?.forEach( s => s.autoReversed = true);
+      this.sliderButtons?.forEach( s => s.setReversedIfUndefined(this.reversed));
     }
   }
 

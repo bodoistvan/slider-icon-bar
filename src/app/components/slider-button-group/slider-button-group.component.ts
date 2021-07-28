@@ -22,20 +22,20 @@ export class SliderButtonGroupComponent implements OnInit, ISliderReversable, Af
     private cdRef : ChangeDetectorRef
   ) { }
 
-  ngAfterViewInit(): void {
-    if (this.reversed === undefined){
-      this.reversed = this.autoReversed;
+  setReversedIfUndefined(par: boolean): void {
+    if (this.reversed == undefined) {
+      this.reversed = par;
     }
-    this.cdRef.detectChanges();
-
     if (this.reversed === true) {
-      this.sliderButtons?.forEach( s => s.autoReversed = true);
+      this.sliderButtons?.forEach( s => s.setReversedIfUndefined(this.reversed!));
     }
   }
 
-  ngOnInit(): void {
-    
+  ngAfterViewInit(): void {
+      this.cdRef.detectChanges();
   }
+ 
+  ngOnInit(): void { }
 
   onClick() {
     this.toggle();

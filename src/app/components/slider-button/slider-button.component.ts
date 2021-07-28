@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core'
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { BehaviorSubject, Subject } from 'rxjs';
 import { ISliderReversable } from '../ISliderReversable';
@@ -8,24 +8,31 @@ import { ISliderReversable } from '../ISliderReversable';
     templateUrl: './slider-button.component.html',
     styleUrls: ['./slider-button.component.scss']
 })
-export class SliderButtonComponent implements OnInit,AfterViewInit, ISliderReversable {
+export class SliderButtonComponent implements OnInit, ISliderReversable, AfterViewChecked {
     constructor(
         private router: Router,
         private cdRef : ChangeDetectorRef
     ) {}
+
+    setReversedIfUndefined(par: boolean): void {
+       if (this.reversed === undefined){
+           this.reversed = par;
+       }
+    }
+
+    ngAfterViewChecked(): void {
+        if (this.reversed === undefined) {
+            console.log(this.autoReversed);
+            this.reversed = this.autoReversed;
+        }
+        this.cdRef.detectChanges();
+    }
     
      //This property can be set, it disables reversed property inheritation
     @Input('reversed') reversed?: boolean;
 
     //partent component should set autoReversed
     public autoReversed: boolean = false;
-
-    ngAfterViewInit(): void {
-        if (this.reversed === undefined) {
-            this.reversed = this.autoReversed;
-        }
-        this.cdRef.detectChanges();
-    }
 
     //The link user should be redirected to
     @Input('redirect') redirect = ''
