@@ -1,0 +1,64 @@
+::ng-deep {
+    .button {
+        color : red !important;
+    }
+}
+
+.slider-button-group {
+    width: fit-content;
+    .slider-button-icon {
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        border-radius: 50%;
+        position: relative;
+
+        .slider-active-icon {
+            position: absolute;
+            bottom: 3px;
+            right: -2px;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            background-color: aqua;
+        }
+    }
+
+    
+
+    
+
+    .slider-items {
+        background-color: aqua ;
+        max-height: 0;
+        overflow: hidden;
+        width: fit-content;
+        transition: max-height 1s ease-out;
+    }
+
+    &:hover {
+
+        .slider-items {
+            background-color: red;
+            max-height: 1000px;
+            transition: max-height 1s linear;
+        }
+
+    }
+
+}
+
+.active {
+    .slider-items {
+        max-height: 1000px;
+    }
+
+    .slider-button-icon {
+       
+        .slider-active-icon {
+            background-color: red !important;
+        }
+    }
+}
+
+

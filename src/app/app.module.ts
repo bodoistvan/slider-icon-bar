@@ -3,10 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SliderButtonComponent } from './components/slider-button/slider-button.component';
+import { SocialNavigatorComponent } from './components/social-navigator/social-navigator.component';
+import { PageComponent } from './page/page.component';
+import { SliderButtonGroupComponent } from './components/slider-button-group/slider-button-group.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SliderButtonComponent,
+    SocialNavigatorComponent,
+    PageComponent,
+    SliderButtonGroupComponent
   ],
   imports: [
     BrowserModule,

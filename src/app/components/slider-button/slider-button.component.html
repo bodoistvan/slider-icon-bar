@@ -1,0 +1,11 @@
+<div class="slider-button" [class.reversed]="reversed" [class.pointer]="redirect != ''" (click)="onClick()">
+    <div class="slider-text">
+        <ng-content select="h1"></ng-content>
+    </div>
+    <div class="slider-content">
+        <ng-content select="div"></ng-content>
+    </div>
+    <div class="slider-logo" [class.dark]="isDark">
+        <ng-content select="img"></ng-content>
+    </div>
+</div>
