@@ -9,6 +9,8 @@ export class PageComponent implements OnInit {
 
   constructor() { }
 
+  isReversed:boolean = true;
+
   ngOnInit(): void {
   }
 

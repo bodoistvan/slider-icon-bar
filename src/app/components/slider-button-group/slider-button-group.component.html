@@ -1,10 +1,10 @@
-<div class="slider-button-group" [class.active]="active">
+<div class="slider-button-group" [class.active]="active" [class.reversed]="reversed">
     <div class="slider-button-icon" (click)="onClick()">
         <div class="slider-active-icon">
 
         </div>
     </div>
     <div class="slider-items">
-        <ng-content select="[slider-button]"></ng-content>
+        <ng-content></ng-content>
     </div>
 </div>

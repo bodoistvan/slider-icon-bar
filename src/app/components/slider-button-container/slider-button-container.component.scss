@@ -1,0 +1,23 @@
+.slider-button-container {
+    background-color: aqua;
+    position: relative;
+    width: 40px;
+
+    .slider-button-content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+.reversed {
+    .slider-button-content {
+        left: auto;
+        right: 0;
+        align-items: flex-end !important;
+    }
+}

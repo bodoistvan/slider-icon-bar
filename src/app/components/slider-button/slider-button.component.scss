@@ -3,6 +3,7 @@ $slide-time: 1.5s;
 
 :host ::ng-deep {
     .slider-button {
+        margin-bottom: 5px;
         max-width: $height;
         width: fit-content;
         height: $height;

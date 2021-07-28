@@ -7,6 +7,8 @@ import { SliderButtonComponent } from './components/slider-button/slider-button.
 import { SocialNavigatorComponent } from './components/social-navigator/social-navigator.component';
 import { PageComponent } from './page/page.component';
 import { SliderButtonGroupComponent } from './components/slider-button-group/slider-button-group.component';
+import { SliderButtonContainerComponent } from './components/slider-button-container/slider-button-container.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { SliderButtonGroupComponent } from './components/slider-button-group/sli
     SliderButtonComponent,
     SocialNavigatorComponent,
     PageComponent,
-    SliderButtonGroupComponent
+    SliderButtonGroupComponent,
+    SliderButtonContainerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
